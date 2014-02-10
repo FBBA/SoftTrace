@@ -1,0 +1,106 @@
+﻿@model SATracking.Domain.OrganizationDTO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>OrganizationDTO</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrganizationID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrganizationID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrganizationName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrganizationName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrgAddress_1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrgAddress_1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrgAddress_2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrgAddress_2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrgCity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrgCity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrgState)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrgState)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrgZipCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrgZipCode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactPerson)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactPerson)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Phone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fax)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fax)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrgUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrgUrl)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Comment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Comment)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.OrganizationID }) |
+    @Html.ActionLink("Back to List", "List")
+</p>

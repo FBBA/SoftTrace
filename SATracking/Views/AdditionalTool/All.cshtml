@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SATrackingDAL.vwAllAddTool>
+
+@{
+    ViewBag.Title = "All";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 20, ajaxUpdateContainerId: "gridContent");
+}
+
+<h2>All</h2>
+
+<div id="gridContent">
+
+@grid.GetHtml(
+    tableStyle: "gridTable",
+    headerStyle: "gridHead",
+    footerStyle: "gridFooter",
+    rowStyle: "gridRow",
+    alternatingRowStyle: "gridAltRow",
+    mode:WebGridPagerModes.All,
+    firstText: "<< First", 
+    previousText: "< Previous", nextText: "Next >", 
+    lastText: "Last >>", 
+    columns: new []{
+    grid.Column("AdditionalToolName", "Tool"),
+    grid.Column("ToolCount", "Usage",
+    format: @<text>@Html.ActionLink(Html.Encode((string)(item.ToolCount.ToString() + " Application(s)")), "Index", "Application", new { param = item.AdditionalToolName, src="tool"}, null)</text>) 
+})
+
+</div>

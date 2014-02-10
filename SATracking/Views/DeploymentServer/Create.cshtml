@@ -1,0 +1,44 @@
+﻿@model SATracking.Models.DeploymentServerModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>DeploymentServerModel</legend>
+        <table>
+        
+            <tr><td>
+            @Html.LabelFor(model => model.dtoDS.ApplicationEnvironmentID)
+            </td><td>
+            @*@Html.EditorFor(model => model.dtoDS.ApplicationEnvironmentID)*@
+            @Html.DropDownListFor(model => model.dtoDS.ApplicationEnvironmentID, Model.appEnvList, "Select, please", new {style="width:300px"})
+            @Html.ValidationMessageFor(model => model.dtoDS.ApplicationEnvironmentID)
+            </td></tr>
+
+            <tr><td>
+            @Html.LabelFor(model => model.dtoDS.DeploymentServerName)
+            </td><td>
+            @Html.EditorFor(model => model.dtoDS.DeploymentServerName)
+            @Html.ValidationMessageFor(model => model.dtoDS.DeploymentServerName)
+            </td></tr>
+        </table>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

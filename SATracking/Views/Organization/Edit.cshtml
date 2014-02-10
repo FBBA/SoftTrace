@@ -1,0 +1,122 @@
+﻿@model SATracking.Models.OrganizationModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dtoOrg.OrganizationID)
+            @Html.ValidationMessageFor(model => model.dtoOrg.OrganizationID)
+        </div>
+        <table cellpadding="0" cellspacing="0">
+            <tr><td>
+    
+            @Html.LabelFor(model => model.dtoOrg.OrganizationName)
+
+             </td><td>
+
+            @Html.EditorFor(model => model.dtoOrg.OrganizationName)
+            @Html.ValidationMessageFor(model => model.dtoOrg.OrganizationName)
+
+            </td></tr>
+        
+            <tr><td>
+            @Html.LabelFor(model => model.dtoOrg.OrgAddress_1)
+            </td><td>
+             @Html.EditorFor(model => model.dtoOrg.OrgAddress_1)
+            @Html.ValidationMessageFor(model => model.dtoOrg.OrgAddress_1)
+            </td></tr>
+        
+            <tr><td>
+            @Html.LabelFor(model => model.dtoOrg.OrgAddress_2)
+                </td><td>
+            @Html.EditorFor(model => model.dtoOrg.OrgAddress_2)
+            @Html.ValidationMessageFor(model => model.dtoOrg.OrgAddress_2)
+                </td></tr>
+            <tr><td>
+            @Html.LabelFor(model => model.dtoOrg.OrgCity)
+            </td><td>
+            @Html.EditorFor(model => model.dtoOrg.OrgCity)
+            @Html.ValidationMessageFor(model => model.dtoOrg.OrgCity)
+            </td></tr>
+
+            <tr><td>
+            @Html.LabelFor(model => model.dtoOrg.OrgState)
+                </td><td>
+           @* @Html.EditorFor(model => model.dtoOrg.OrgState)*@
+            @Html.DropDownListFor(model => model.dtoOrg.OrgState, Model.stateList, "Select, please", new {style="width:300px"})
+            @Html.ValidationMessageFor(model => model.dtoOrg.OrgState)
+                </td></tr>
+
+            <tr><td>
+            @Html.LabelFor(model => model.dtoOrg.OrgZipCode)
+                </td><td>
+            @Html.EditorFor(model => model.dtoOrg.OrgZipCode)
+            @Html.ValidationMessageFor(model => model.dtoOrg.OrgZipCode)
+            </td></tr>
+
+            <tr><td>
+            @Html.LabelFor(model => model.dtoOrg.ContactPerson)
+                </td><td>
+            @Html.EditorFor(model => model.dtoOrg.ContactPerson)
+            @Html.ValidationMessageFor(model => model.dtoOrg.ContactPerson)
+            </td></tr>
+
+            <tr><td>
+            @Html.LabelFor(model => model.dtoOrg.Phone)
+                </td><td>
+            @Html.EditorFor(model => model.dtoOrg.Phone)
+            @Html.ValidationMessageFor(model => model.dtoOrg.Phone)
+            </td></tr>
+
+            <tr><td>
+            @Html.LabelFor(model => model.dtoOrg.Fax)
+                </td><td>
+            @Html.EditorFor(model => model.dtoOrg.Fax)
+            @Html.ValidationMessageFor(model => model.dtoOrg.Fax)
+                </td></tr>
+
+            <tr><td>
+            @Html.LabelFor(model => model.dtoOrg.Email)
+                </td><td>
+            @Html.EditorFor(model => model.dtoOrg.Email)
+            @Html.ValidationMessageFor(model => model.dtoOrg.Email)
+            </td></tr>
+
+            <tr><td>
+            @Html.LabelFor(model => model.dtoOrg.OrgUrl)
+                </td><td>
+            @Html.EditorFor(model => model.dtoOrg.OrgUrl)
+            @Html.ValidationMessageFor(model => model.dtoOrg.OrgUrl)
+            </td></tr>
+
+            <tr><td>
+            @Html.LabelFor(model => model.dtoOrg.Comment)
+                </td><td>
+            @Html.TextAreaFor(model => model.dtoOrg.Comment, new { @cols = 50, @rows = 5 })
+            @Html.ValidationMessageFor(model => model.dtoOrg.Comment)
+            </td></tr>
+
+        </table>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "List")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

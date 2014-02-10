@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <link href="~/Content/style.css" rel="stylesheet" />
+    </head>
+    <body>
+            <div>
+                <div class="content-wrapper">
+                    <div id="top-section">
+                        <div class="float-right" style="margin-top:10px; height:40px;">
+                            <section id="login">
+                                @Html.Partial("_LoginPartial")
+                            </section>
+                        </div>
+                </div>
+            </div>
+
+            <div style="width:1000px; height:30px; background-color:#6699FF; margin:0 auto;">
+                Apple
+            </div>
+
+            <div style="width:1000px; margin:0 auto; min-height:900px;">
+                <div style="background-color:#D1E0FF; float:left; width:200px; min-height:900px; font-family:Arial; font-size:14px; font-weight:bold;">
+
+                    <ul style="list-style:none;margin-top:20px;margin-left:10px;font-size:16px; color:#141452;">
+                        <li>Organization</li>
+                        <li>Divisions</li>
+                        <li>@Html.ActionLink("Application",  "Index", "Application") </li>
+                        <li>@Html.ActionLink("Languages",  "All", "Language") </li>
+                        <li>@Html.ActionLink("Methodologies",  "All", "Methodology") </li>
+                        <li>@Html.ActionLink("Data Sources",  "All", "DataSource") </li>
+                        <li>@Html.ActionLink("Deployment Servers",  "All", "DeploymentServer") </li>
+                        <li>@Html.ActionLink("Add. Tools",  "All", "AdditionalTool") </li>
+                        <li>@Html.ActionLink("Frameworks",  "All", "Framework") </li>
+                        <li>@Html.ActionLink("Skills",  "All", "Skill") </li>
+                        <li>Services</li>
+                        <li>About us</li>
+                        <li>Contact us</li>
+                    </ul>
+                </div>
+
+                <div style="float:right; background-color:#F5FCFF; width:790px; margin-left:0px; padding-left:5px; min-height:900px;">
+                    @RenderBody()
+                </div>                                                       
+            </div>
+
+            <div style="width: 1000px; background-color: #F1F8FF; margin: 0 auto;">
+                @DateTime.Now.Year - My ASP.NET MVC Application
+            </div>
+
+       </div>                                                                           
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

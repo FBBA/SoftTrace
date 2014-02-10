@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SATrackingDAL.vwAllDataSource>
+
+@{
+    ViewBag.Title = "All";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 20, ajaxUpdateContainerId: "gridContent");
+}
+
+<h2>All</h2>
+
+<div id="gridContent">
+
+@grid.GetHtml(
+    tableStyle: "gridTable",
+    headerStyle: "gridHead",
+    footerStyle: "gridFooter",
+    rowStyle: "gridRow",
+    alternatingRowStyle: "gridAltRow",
+    mode:WebGridPagerModes.All,
+    firstText: "<< First", 
+    previousText: "< Previous", nextText: "Next >", 
+    lastText: "Last >>", 
+    columns: new []{
+    grid.Column("DataSourceName", "Data Source"),
+    grid.Column("DSCount", "Usage",
+    format: @<text>@Html.ActionLink(Html.Encode((string)(item.DSCount.ToString() + " Application(s)")), "Index", "Application", new { param = item.DataSourceName, src="ds"}, null)</text>) 
+})
+
+</div>

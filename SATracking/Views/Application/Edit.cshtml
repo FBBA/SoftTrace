@@ -1,0 +1,130 @@
+﻿@model SATracking.Models.ApplicationModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <fieldset>
+        <legend>Application</legend>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dtoApp.ApplicationID)
+            @Html.ValidationMessageFor(model => model.dtoApp.ApplicationID)
+        </div>
+
+        @{Html.RenderPartial("ApplicationMenu", new ViewDataDictionary { { "appID", Model.dtoApp.ApplicationID } });}
+
+ @*       @Html.ActionLink("Application", "Edit")/@Html.ActionLink("Languages","Index","Language",new {appID=Model.dtoApp.ApplicationID}, new {style="color:blue;text-decoration:none;font-weight:bold;"})/
+        @Html.ActionLink("Methodologies", "Index", "Methodology", new { appID = Request.QueryString["appID"] }, new { style = "color:blue;text-decoration:none;font-weight:bold;" })/Data Sources/Deployment Servers/Additional Tools/Frameworks/Skills Required*@
+        
+        <table>
+        
+            <tr><td>
+                @Html.LabelFor(model => model.dtoApp.ApplicationName)
+            </td><td>
+                @Html.EditorFor(model => model.dtoApp.ApplicationName)
+                @Html.ValidationMessageFor(model => model.dtoApp.ApplicationName)
+            </td></tr>
+            <tr><td>
+            @Html.LabelFor(model => model.dtoApp.OrganizationID)
+            </td><td>
+            @Html.DropDownListFor(model => model.dtoApp.OrganizationID, Model.orgList, "Select, please", new {style="width:300px"})
+        </td></tr>
+        <tr><td>
+            @Html.LabelFor(model => model.dtoApp.ApplicationEnvironment)
+        </td><td>
+            @Html.EditorFor(model => model.dtoApp.ApplicationEnvironment)
+            @Html.ValidationMessageFor(model => model.dtoApp.ApplicationEnvironment)
+        </td></tr>
+        <tr><td>
+            @Html.LabelFor(model => model.dtoApp.DevelopingCompany)
+        </td><td>
+            @Html.EditorFor(model => model.dtoApp.DevelopingCompany)
+            @Html.ValidationMessageFor(model => model.dtoApp.DevelopingCompany)
+        </td></tr>
+         <tr><td>
+            @Html.LabelFor(model => model.dtoApp.ProjectManager)
+        </td><td>  
+            @Html.EditorFor(model => model.dtoApp.ProjectManager)
+            @Html.ValidationMessageFor(model => model.dtoApp.ProjectManager)
+        </td></tr>
+        <tr><td> 
+            @Html.LabelFor(model => model.dtoApp.OperatingSystem)   
+        </td><td>     
+            @Html.EditorFor(model => model.dtoApp.OperatingSystem)
+            @Html.ValidationMessageFor(model => model.dtoApp.OperatingSystem)
+        </td></tr>
+        <tr><td>       
+            @Html.LabelFor(model => model.dtoApp.IDE)      
+        </td><td>     
+            @Html.EditorFor(model => model.dtoApp.IDE)
+            @Html.ValidationMessageFor(model => model.dtoApp.IDE)        
+        </td></tr>
+        <tr><td>    
+            @Html.LabelFor(model => model.dtoApp.VersionControlTool)       
+        </td><td>        
+            @Html.EditorFor(model => model.dtoApp.VersionControlTool)
+            @Html.ValidationMessageFor(model => model.dtoApp.VersionControlTool)        
+        </td></tr>
+        <tr><td>    
+            @Html.LabelFor(model => model.dtoApp.VersionControlPath)       
+        </td><td>       
+            @Html.EditorFor(model => model.dtoApp.VersionControlPath)
+            @Html.ValidationMessageFor(model => model.dtoApp.VersionControlPath)  
+        </td></tr>
+        <tr><td>      
+            @Html.LabelFor(model => model.dtoApp.ApplicationType)     
+        </td><td>    
+            @Html.EditorFor(model => model.dtoApp.ApplicationType)
+            @Html.ValidationMessageFor(model => model.dtoApp.ApplicationType)
+         </td></tr>
+        <tr><td>
+            @Html.LabelFor(model => model.dtoApp.UnitTestTool)
+        </td><td>        
+            @Html.EditorFor(model => model.dtoApp.UnitTestTool)
+            @Html.ValidationMessageFor(model => model.dtoApp.UnitTestTool)
+        </td></tr>
+        <tr><td>
+            @Html.LabelFor(model => model.dtoApp.DeployementTool)      
+        </td><td>
+            @Html.EditorFor(model => model.dtoApp.DeployementTool)
+            @Html.ValidationMessageFor(model => model.dtoApp.DeployementTool)
+        </td></tr>
+        <tr><td>      
+            @Html.LabelFor(model => model.dtoApp.DeployedDate) 
+            </td><td>     
+            @Html.EditorFor(model => model.dtoApp.DeployedDate)
+            @Html.ValidationMessageFor(model => model.dtoApp.DeployedDate)
+        </td></tr>
+        <tr><td>
+            @Html.LabelFor(model => model.dtoApp.OutsideApplication)
+        </td><td>
+            @Html.EditorFor(model => model.dtoApp.OutsideApplication)
+            @Html.ValidationMessageFor(model => model.dtoApp.OutsideApplication)
+        </td></tr>
+        <tr><td>
+            @Html.LabelFor(model => model.dtoApp.Comment)
+        </td><td>
+            @Html.TextAreaFor(model => model.dtoApp.Comment, new { @cols = 50, @rows = 5 })
+            @Html.ValidationMessageFor(model => model.dtoApp.Comment)
+        </td></tr>
+            </table>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

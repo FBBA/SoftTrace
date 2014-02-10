@@ -1,0 +1,41 @@
+﻿@model IEnumerable<SATrackingDAL.ApplicationMethodology>
+
+@{
+    ViewBag.Title = "Index";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 20, ajaxUpdateContainerId: "gridContent");
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { appID = Request.QueryString["appID"]})
+</p>
+
+@{Html.RenderPartial("ApplicationMenu", new ViewDataDictionary { { "appID", Request.QueryString["appID"] } });}
+
+<div id="gridContent">
+
+@grid.GetHtml(
+    tableStyle: "gridTable",
+    headerStyle: "gridHead",
+    footerStyle: "gridFooter",
+    rowStyle: "gridRow",
+    alternatingRowStyle: "gridAltRow",
+    mode:WebGridPagerModes.All,
+    firstText: "<< First", 
+    previousText: "< Previous", nextText: "Next >", 
+    lastText: "Last >>", 
+    columns: new []{
+    grid.Column( "", 
+    header: "View", 
+    format: @<text> 
+    @Html.ActionLink("Edit",   "Edit",   new { id=item.ApplicationMethodologyID} ) 
+    | @Html.ActionLink("Delete", "Delete", new { id = item.ApplicationMethodologyID}) 
+    | @Html.ActionLink("Details", "Details", new { id=item.ApplicationMethodologyID })
+    </text>) 
+    ,
+    grid.Column("ApplicationMethodologyText", "Methodology"),
+
+})
+
+</div>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<SATrackingDAL.Organization>
+
+@{
+    ViewBag.Title = "List";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 20, ajaxUpdateContainerId: "gridContent");
+}
+    
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div id="gridContent">
+
+@grid.GetHtml(
+    tableStyle: "gridTable",
+    headerStyle: "gridHead",
+    footerStyle: "gridFooter",
+    rowStyle: "gridRow",
+    alternatingRowStyle: "gridAltRow",
+    mode:WebGridPagerModes.All,
+    firstText: "<< First", 
+    previousText: "< Previous", nextText: "Next >", 
+    lastText: "Last >>", 
+    columns: new []{
+    grid.Column( "", 
+    header: "View", 
+    format: @<text> 
+    @Html.ActionLink("Edit",   "Edit",   new { id=item.OrganizationID} ) 
+    | @Html.ActionLink("Delete", "Delete", new { id = item.OrganizationID}) 
+    | @Html.ActionLink("Details", "Details", new { id=item.OrganizationID })
+    </text>) 
+    ,
+    grid.Column("OrganizationName", "Organization Name"),
+    grid.Column("OrgAddress_1","Address"),
+    grid.Column("OrgCity","City"),
+    grid.Column("OrgState", "State")
+})
+
+</div>

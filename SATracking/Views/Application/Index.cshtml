@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SATrackingDAL.Application>
+
+@{
+    ViewBag.Title = "Index";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 20, ajaxUpdateContainerId: "gridContent");
+}
+
+<h2>Index</h2>
+
+<script lang="javascript">
+    //alert([2, 3, -1, -6, 0, -108, 42, 10].sort(function (x, y) {
+    //    if (x < y) return -1;
+    //    if (x > y) return 1;
+    //    return 0;
+    //}));
+
+    //alert(42 + (function () { return 42 })());
+</script>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div id="gridContent">
+
+@grid.GetHtml(
+    tableStyle: "gridTable",
+    headerStyle: "gridHead",
+    footerStyle: "gridFooter",
+    rowStyle: "gridRow",
+    alternatingRowStyle: "gridAltRow",
+    mode:WebGridPagerModes.All,
+    firstText: "<< First", 
+    previousText: "< Previous", nextText: "Next >", 
+    lastText: "Last >>", 
+    columns: new []{
+    grid.Column( "", 
+    header: "View", 
+    format: @<text> 
+    @Html.ActionLink("Edit",   "Edit", "Application",  new { appID=item.ApplicationID}, null ) 
+    | @Html.ActionLink("Delete", "Delete", new { id = item.ApplicationID}) 
+    | @Html.ActionLink("Details", "Details", new { id=item.ApplicationID })
+    </text>) 
+    ,
+    grid.Column("ApplicationName", "Application Name"),
+    grid.Column("DevelopingCompany","Company Developed"),
+    grid.Column("ApplicationType","Application Type"),
+    grid.Column("DeployedDate", "Date Deployed")
+})
+
+</div>
