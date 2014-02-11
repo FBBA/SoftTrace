@@ -1,0 +1,1250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SoftwareAssetsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="SoftwareAssetsModelStoreContainer">
+          <EntitySet Name="AdditionalTool" EntityType="SoftwareAssetsModel.Store.AdditionalTool" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Application" EntityType="SoftwareAssetsModel.Store.Application" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ApplicationEnvironment" EntityType="SoftwareAssetsModel.Store.ApplicationEnvironment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ApplicationMethodology" EntityType="SoftwareAssetsModel.Store.ApplicationMethodology" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BusinessUnit" EntityType="SoftwareAssetsModel.Store.BusinessUnit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DataSource" EntityType="SoftwareAssetsModel.Store.DataSource" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DeploymentServer" EntityType="SoftwareAssetsModel.Store.DeploymentServer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DevelopmentLanguages" EntityType="SoftwareAssetsModel.Store.DevelopmentLanguages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FrameworkUsed" EntityType="SoftwareAssetsModel.Store.FrameworkUsed" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Organization" EntityType="SoftwareAssetsModel.Store.Organization" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatternUsed" EntityType="SoftwareAssetsModel.Store.PatternUsed" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SkillsRequired" EntityType="SoftwareAssetsModel.Store.SkillsRequired" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="State" EntityType="SoftwareAssetsModel.Store.State" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserProfile" EntityType="SoftwareAssetsModel.Store.UserProfile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vwAllAddTools" EntityType="SoftwareAssetsModel.Store.vwAllAddTools" store:Type="Views" store:Schema="dbo" store:Name="vwAllAddTools">
+            <DefiningQuery>SELECT 
+      [vwAllAddTools].[AdditionalToolName] AS [AdditionalToolName], 
+      [vwAllAddTools].[ToolCount] AS [ToolCount]
+      FROM [dbo].[vwAllAddTools] AS [vwAllAddTools]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwAllDataSources" EntityType="SoftwareAssetsModel.Store.vwAllDataSources" store:Type="Views" store:Schema="dbo" store:Name="vwAllDataSources">
+            <DefiningQuery>SELECT 
+      [vwAllDataSources].[DataSourceName] AS [DataSourceName], 
+      [vwAllDataSources].[DSCount] AS [DSCount]
+      FROM [dbo].[vwAllDataSources] AS [vwAllDataSources]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwAllDeploymentServer" EntityType="SoftwareAssetsModel.Store.vwAllDeploymentServer" store:Type="Views" store:Schema="dbo" store:Name="vwAllDeploymentServer">
+            <DefiningQuery>SELECT 
+      [vwAllDeploymentServer].[DeploymentServerName] AS [DeploymentServerName], 
+      [vwAllDeploymentServer].[DSCount] AS [DSCount]
+      FROM [dbo].[vwAllDeploymentServer] AS [vwAllDeploymentServer]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwAllFramework" EntityType="SoftwareAssetsModel.Store.vwAllFramework" store:Type="Views" store:Schema="dbo" store:Name="vwAllFramework">
+            <DefiningQuery>SELECT 
+      [vwAllFramework].[FrameworkName] AS [FrameworkName], 
+      [vwAllFramework].[FrmwCount] AS [FrmwCount]
+      FROM [dbo].[vwAllFramework] AS [vwAllFramework]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwAllLanguages" EntityType="SoftwareAssetsModel.Store.vwAllLanguages" store:Type="Views" store:Schema="dbo" store:Name="vwAllLanguages">
+            <DefiningQuery>SELECT 
+      [vwAllLanguages].[LanguageName] AS [LanguageName], 
+      [vwAllLanguages].[LangCount] AS [LangCount]
+      FROM [dbo].[vwAllLanguages] AS [vwAllLanguages]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwAllMethodologies" EntityType="SoftwareAssetsModel.Store.vwAllMethodologies" store:Type="Views" store:Schema="dbo" store:Name="vwAllMethodologies">
+            <DefiningQuery>SELECT 
+      [vwAllMethodologies].[ApplicationMethodologyText] AS [ApplicationMethodologyText], 
+      [vwAllMethodologies].[MthdCount] AS [MthdCount]
+      FROM [dbo].[vwAllMethodologies] AS [vwAllMethodologies]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwAllSkills" EntityType="SoftwareAssetsModel.Store.vwAllSkills" store:Type="Views" store:Schema="dbo" store:Name="vwAllSkills">
+            <DefiningQuery>SELECT 
+      [vwAllSkills].[SkillName] AS [SkillName], 
+      [vwAllSkills].[SkillCount] AS [SkillCount]
+      FROM [dbo].[vwAllSkills] AS [vwAllSkills]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwDataSource" EntityType="SoftwareAssetsModel.Store.vwDataSource" store:Type="Views" store:Schema="dbo" store:Name="vwDataSource">
+            <DefiningQuery>SELECT 
+      [vwDataSource].[DataSourceID] AS [DataSourceID], 
+      [vwDataSource].[ApplicationID] AS [ApplicationID], 
+      [vwDataSource].[ApplicationEnvironmentID] AS [ApplicationEnvironmentID], 
+      [vwDataSource].[DataSourceName] AS [DataSourceName], 
+      [vwDataSource].[SchemaName] AS [SchemaName], 
+      [vwDataSource].[DataSourceType] AS [DataSourceType], 
+      [vwDataSource].[ApplicationEnvironmentName] AS [ApplicationEnvironmentName]
+      FROM [dbo].[vwDataSource] AS [vwDataSource]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwDeploymentServer" EntityType="SoftwareAssetsModel.Store.vwDeploymentServer" store:Type="Views" store:Schema="dbo" store:Name="vwDeploymentServer">
+            <DefiningQuery>SELECT 
+      [vwDeploymentServer].[DeploymentServerID] AS [DeploymentServerID], 
+      [vwDeploymentServer].[ApplicationID] AS [ApplicationID], 
+      [vwDeploymentServer].[ApplicationEnvironmentID] AS [ApplicationEnvironmentID], 
+      [vwDeploymentServer].[DeploymentServerName] AS [DeploymentServerName], 
+      [vwDeploymentServer].[ApplicationEnvironmentName] AS [ApplicationEnvironmentName]
+      FROM [dbo].[vwDeploymentServer] AS [vwDeploymentServer]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_AdditionalTool_Application" Association="SoftwareAssetsModel.Store.FK_AdditionalTool_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="AdditionalTool" EntitySet="AdditionalTool" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Application_Organization" Association="SoftwareAssetsModel.Store.FK_Application_Organization">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="Application" EntitySet="Application" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApplicationMethodology_Application" Association="SoftwareAssetsModel.Store.FK_ApplicationMethodology_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="ApplicationMethodology" EntitySet="ApplicationMethodology" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessUnit_Organization" Association="SoftwareAssetsModel.Store.FK_BusinessUnit_Organization">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="BusinessUnit" EntitySet="BusinessUnit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DataSource_Application" Association="SoftwareAssetsModel.Store.FK_DataSource_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="DataSource" EntitySet="DataSource" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DataSource_ApplicationEnvironment1" Association="SoftwareAssetsModel.Store.FK_DataSource_ApplicationEnvironment1">
+            <End Role="ApplicationEnvironment" EntitySet="ApplicationEnvironment" />
+            <End Role="DataSource" EntitySet="DataSource" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeploymentServer_Application" Association="SoftwareAssetsModel.Store.FK_DeploymentServer_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="DeploymentServer" EntitySet="DeploymentServer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeploymentServer_ApplicationEnvironment" Association="SoftwareAssetsModel.Store.FK_DeploymentServer_ApplicationEnvironment">
+            <End Role="ApplicationEnvironment" EntitySet="ApplicationEnvironment" />
+            <End Role="DeploymentServer" EntitySet="DeploymentServer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DevelopmentLanguages_Application" Association="SoftwareAssetsModel.Store.FK_DevelopmentLanguages_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="DevelopmentLanguages" EntitySet="DevelopmentLanguages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FrameworkUsed_Application" Association="SoftwareAssetsModel.Store.FK_FrameworkUsed_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="FrameworkUsed" EntitySet="FrameworkUsed" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatternUsed_Application" Association="SoftwareAssetsModel.Store.FK_PatternUsed_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="PatternUsed" EntitySet="PatternUsed" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SkillsRequired_Application" Association="SoftwareAssetsModel.Store.FK_SkillsRequired_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="SkillsRequired" EntitySet="SkillsRequired" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AdditionalTool">
+          <Key>
+            <PropertyRef Name="AdditionalToolID" />
+          </Key>
+          <Property Name="AdditionalToolID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="int" Nullable="false" />
+          <Property Name="AdditionalToolName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="ApplicationID" />
+          </Key>
+          <Property Name="ApplicationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrganizationID" Type="int" />
+          <Property Name="ApplicationName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ApplicationEnvironment" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DevelopingCompany" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ProjectManager" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="OperatingSystem" Type="varchar" MaxLength="50" />
+          <Property Name="IDE" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="VersionControlTool" Type="varchar" MaxLength="50" />
+          <Property Name="VersionControlPath" Type="varchar" MaxLength="150" />
+          <Property Name="ApplicationType" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UnitTestTool" Type="varchar" MaxLength="50" />
+          <Property Name="DeployementTool" Type="varchar" MaxLength="100" />
+          <Property Name="DeployedDate" Type="datetime" />
+          <Property Name="OutsideApplication" Type="varchar" MaxLength="1" />
+          <Property Name="Comment" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="ApplicationEnvironment">
+          <Key>
+            <PropertyRef Name="ApplicationEnvironmentID" />
+          </Key>
+          <Property Name="ApplicationEnvironmentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationEnvironmentName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ApplicationMethodology">
+          <Key>
+            <PropertyRef Name="ApplicationMethodologyID" />
+          </Key>
+          <Property Name="ApplicationMethodologyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="int" Nullable="false" />
+          <Property Name="ApplicationMethodologyText" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="BusinessUnit">
+          <Key>
+            <PropertyRef Name="BusinessUnitID" />
+          </Key>
+          <Property Name="BusinessUnitID" Type="int" Nullable="false" />
+          <Property Name="OrganizationID" Type="int" Nullable="false" />
+          <Property Name="BusinessUnitName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Comment" Type="text" />
+        </EntityType>
+        <EntityType Name="DataSource">
+          <Key>
+            <PropertyRef Name="DataSourceID" />
+          </Key>
+          <Property Name="DataSourceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="int" Nullable="false" />
+          <Property Name="ApplicationEnvironmentID" Type="int" Nullable="false" />
+          <Property Name="DataSourceName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="SchemaName" Type="varchar" MaxLength="50" />
+          <Property Name="DataSourceType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DeploymentServer">
+          <Key>
+            <PropertyRef Name="DeploymentServerID" />
+          </Key>
+          <Property Name="DeploymentServerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="int" Nullable="false" />
+          <Property Name="ApplicationEnvironmentID" Type="int" Nullable="false" />
+          <Property Name="DeploymentServerName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="DevelopmentLanguages">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="LanguageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="int" Nullable="false" />
+          <Property Name="LanguageName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="FrameworkUsed">
+          <Key>
+            <PropertyRef Name="FrameworkID" />
+          </Key>
+          <Property Name="FrameworkID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="int" Nullable="false" />
+          <Property Name="FrameworkName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="OrganizationID" />
+          </Key>
+          <Property Name="OrganizationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrganizationName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Comment" Type="text" Nullable="false" />
+          <Property Name="OrgAddress_1" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="OrgAddress_2" Type="varchar" MaxLength="50" />
+          <Property Name="OrgCity" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="OrgState" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="OrgZipCode" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="ContactPerson" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" />
+          <Property Name="Fax" Type="varchar" MaxLength="15" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="60" />
+          <Property Name="OrgUrl" Type="varchar" MaxLength="80" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" />
+          <Property Name="UpdateUserID" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="PatternUsed">
+          <Key>
+            <PropertyRef Name="PatternID" />
+          </Key>
+          <Property Name="PatternID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="int" Nullable="false" />
+          <Property Name="PatternName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SkillsRequired">
+          <Key>
+            <PropertyRef Name="SkillID" />
+          </Key>
+          <Property Name="SkillID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="int" Nullable="false" />
+          <Property Name="SkillName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateCode" />
+          </Key>
+          <Property Name="StateCode" Type="varchar" Nullable="false" MaxLength="2" />
+          <Property Name="StateName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="56" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SoftwareAssets.dbo.vwAllAddTools' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwAllAddTools">
+          <Key>
+            <PropertyRef Name="AdditionalToolName" />
+          </Key>
+          <Property Name="AdditionalToolName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ToolCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SoftwareAssets.dbo.vwAllDataSources' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwAllDataSources">
+          <Key>
+            <PropertyRef Name="DataSourceName" />
+          </Key>
+          <Property Name="DataSourceName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DSCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SoftwareAssets.dbo.vwAllDeploymentServer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwAllDeploymentServer">
+          <Key>
+            <PropertyRef Name="DeploymentServerName" />
+          </Key>
+          <Property Name="DeploymentServerName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DSCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SoftwareAssets.dbo.vwAllFramework' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwAllFramework">
+          <Key>
+            <PropertyRef Name="FrameworkName" />
+          </Key>
+          <Property Name="FrameworkName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="FrmwCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SoftwareAssets.dbo.vwAllLanguages' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwAllLanguages">
+          <Key>
+            <PropertyRef Name="LanguageName" />
+          </Key>
+          <Property Name="LanguageName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="LangCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SoftwareAssets.dbo.vwAllMethodologies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwAllMethodologies">
+          <Key>
+            <PropertyRef Name="ApplicationMethodologyText" />
+          </Key>
+          <Property Name="ApplicationMethodologyText" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="MthdCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SoftwareAssets.dbo.vwAllSkills' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwAllSkills">
+          <Key>
+            <PropertyRef Name="SkillName" />
+          </Key>
+          <Property Name="SkillName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="SkillCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SoftwareAssets.dbo.vwDataSource' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwDataSource">
+          <Key>
+            <PropertyRef Name="DataSourceID" />
+            <PropertyRef Name="ApplicationID" />
+            <PropertyRef Name="ApplicationEnvironmentID" />
+            <PropertyRef Name="DataSourceName" />
+            <PropertyRef Name="ApplicationEnvironmentName" />
+          </Key>
+          <Property Name="DataSourceID" Type="int" Nullable="false" />
+          <Property Name="ApplicationID" Type="int" Nullable="false" />
+          <Property Name="ApplicationEnvironmentID" Type="int" Nullable="false" />
+          <Property Name="DataSourceName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="SchemaName" Type="varchar" MaxLength="50" />
+          <Property Name="DataSourceType" Type="varchar" MaxLength="50" />
+          <Property Name="ApplicationEnvironmentName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SoftwareAssets.dbo.vwDeploymentServer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwDeploymentServer">
+          <Key>
+            <PropertyRef Name="DeploymentServerID" />
+            <PropertyRef Name="ApplicationID" />
+            <PropertyRef Name="ApplicationEnvironmentID" />
+            <PropertyRef Name="DeploymentServerName" />
+            <PropertyRef Name="ApplicationEnvironmentName" />
+          </Key>
+          <Property Name="DeploymentServerID" Type="int" Nullable="false" />
+          <Property Name="ApplicationID" Type="int" Nullable="false" />
+          <Property Name="ApplicationEnvironmentID" Type="int" Nullable="false" />
+          <Property Name="DeploymentServerName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ApplicationEnvironmentName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_AdditionalTool_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Store.Application" Multiplicity="1" />
+          <End Role="AdditionalTool" Type="SoftwareAssetsModel.Store.AdditionalTool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="AdditionalTool">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Application_Organization">
+          <End Role="Organization" Type="SoftwareAssetsModel.Store.Organization" Multiplicity="0..1" />
+          <End Role="Application" Type="SoftwareAssetsModel.Store.Application" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="OrganizationID" />
+            </Principal>
+            <Dependent Role="Application">
+              <PropertyRef Name="OrganizationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApplicationMethodology_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Store.Application" Multiplicity="1" />
+          <End Role="ApplicationMethodology" Type="SoftwareAssetsModel.Store.ApplicationMethodology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="ApplicationMethodology">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessUnit_Organization">
+          <End Role="Organization" Type="SoftwareAssetsModel.Store.Organization" Multiplicity="1" />
+          <End Role="BusinessUnit" Type="SoftwareAssetsModel.Store.BusinessUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="OrganizationID" />
+            </Principal>
+            <Dependent Role="BusinessUnit">
+              <PropertyRef Name="OrganizationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DataSource_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Store.Application" Multiplicity="1" />
+          <End Role="DataSource" Type="SoftwareAssetsModel.Store.DataSource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="DataSource">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DataSource_ApplicationEnvironment1">
+          <End Role="ApplicationEnvironment" Type="SoftwareAssetsModel.Store.ApplicationEnvironment" Multiplicity="1" />
+          <End Role="DataSource" Type="SoftwareAssetsModel.Store.DataSource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApplicationEnvironment">
+              <PropertyRef Name="ApplicationEnvironmentID" />
+            </Principal>
+            <Dependent Role="DataSource">
+              <PropertyRef Name="ApplicationEnvironmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeploymentServer_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Store.Application" Multiplicity="1" />
+          <End Role="DeploymentServer" Type="SoftwareAssetsModel.Store.DeploymentServer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="DeploymentServer">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeploymentServer_ApplicationEnvironment">
+          <End Role="ApplicationEnvironment" Type="SoftwareAssetsModel.Store.ApplicationEnvironment" Multiplicity="1" />
+          <End Role="DeploymentServer" Type="SoftwareAssetsModel.Store.DeploymentServer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApplicationEnvironment">
+              <PropertyRef Name="ApplicationEnvironmentID" />
+            </Principal>
+            <Dependent Role="DeploymentServer">
+              <PropertyRef Name="ApplicationEnvironmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DevelopmentLanguages_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Store.Application" Multiplicity="1" />
+          <End Role="DevelopmentLanguages" Type="SoftwareAssetsModel.Store.DevelopmentLanguages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="DevelopmentLanguages">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FrameworkUsed_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Store.Application" Multiplicity="1" />
+          <End Role="FrameworkUsed" Type="SoftwareAssetsModel.Store.FrameworkUsed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="FrameworkUsed">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatternUsed_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Store.Application" Multiplicity="1" />
+          <End Role="PatternUsed" Type="SoftwareAssetsModel.Store.PatternUsed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="PatternUsed">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SkillsRequired_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Store.Application" Multiplicity="1" />
+          <End Role="SkillsRequired" Type="SoftwareAssetsModel.Store.SkillsRequired" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="SkillsRequired">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SoftwareAssetsModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AdditionalTools" EntityType="SoftwareAssetsModel.AdditionalTool" />
+          <EntitySet Name="Applications" EntityType="SoftwareAssetsModel.Application" />
+          <EntitySet Name="ApplicationEnvironments" EntityType="SoftwareAssetsModel.ApplicationEnvironment" />
+          <EntitySet Name="BusinessUnits" EntityType="SoftwareAssetsModel.BusinessUnit" />
+          <EntitySet Name="DataSources" EntityType="SoftwareAssetsModel.DataSource" />
+          <EntitySet Name="DeploymentServers" EntityType="SoftwareAssetsModel.DeploymentServer" />
+          <EntitySet Name="DevelopmentLanguages" EntityType="SoftwareAssetsModel.DevelopmentLanguage" />
+          <EntitySet Name="FrameworkUseds" EntityType="SoftwareAssetsModel.FrameworkUsed" />
+          <EntitySet Name="Organizations" EntityType="SoftwareAssetsModel.Organization" />
+          <EntitySet Name="PatternUseds" EntityType="SoftwareAssetsModel.PatternUsed" />
+          <EntitySet Name="SkillsRequireds" EntityType="SoftwareAssetsModel.SkillsRequired" />
+          <EntitySet Name="States" EntityType="SoftwareAssetsModel.State" />
+          <EntitySet Name="UserProfiles" EntityType="SoftwareAssetsModel.UserProfile" />
+          <AssociationSet Name="FK_AdditionalTool_Application" Association="SoftwareAssetsModel.FK_AdditionalTool_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="AdditionalTool" EntitySet="AdditionalTools" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Application_Organization" Association="SoftwareAssetsModel.FK_Application_Organization">
+            <End Role="Organization" EntitySet="Organizations" />
+            <End Role="Application" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DataSource_Application" Association="SoftwareAssetsModel.FK_DataSource_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="DataSource" EntitySet="DataSources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeploymentServer_Application" Association="SoftwareAssetsModel.FK_DeploymentServer_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="DeploymentServer" EntitySet="DeploymentServers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DevelopmentLanguages_Application" Association="SoftwareAssetsModel.FK_DevelopmentLanguages_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="DevelopmentLanguages" EntitySet="DevelopmentLanguages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FrameworkUsed_Application" Association="SoftwareAssetsModel.FK_FrameworkUsed_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="FrameworkUsed" EntitySet="FrameworkUseds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatternUsed_Application" Association="SoftwareAssetsModel.FK_PatternUsed_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="PatternUsed" EntitySet="PatternUseds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SkillsRequired_Application" Association="SoftwareAssetsModel.FK_SkillsRequired_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="SkillsRequired" EntitySet="SkillsRequireds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DataSource_ApplicationEnvironment1" Association="SoftwareAssetsModel.FK_DataSource_ApplicationEnvironment1">
+            <End Role="ApplicationEnvironment" EntitySet="ApplicationEnvironments" />
+            <End Role="DataSource" EntitySet="DataSources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeploymentServer_ApplicationEnvironment" Association="SoftwareAssetsModel.FK_DeploymentServer_ApplicationEnvironment">
+            <End Role="ApplicationEnvironment" EntitySet="ApplicationEnvironments" />
+            <End Role="DeploymentServer" EntitySet="DeploymentServers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessUnit_Organization" Association="SoftwareAssetsModel.FK_BusinessUnit_Organization">
+            <End Role="Organization" EntitySet="Organizations" />
+            <End Role="BusinessUnit" EntitySet="BusinessUnits" />
+          </AssociationSet>
+          <EntitySet Name="ApplicationMethodologies" EntityType="SoftwareAssetsModel.ApplicationMethodology" />
+          <AssociationSet Name="FK_ApplicationMethodology_Application" Association="SoftwareAssetsModel.FK_ApplicationMethodology_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="ApplicationMethodology" EntitySet="ApplicationMethodologies" />
+          </AssociationSet>
+          <EntitySet Name="vwDataSources" EntityType="SoftwareAssetsModel.vwDataSource" />
+          <EntitySet Name="vwAllLanguages" EntityType="SoftwareAssetsModel.vwAllLanguage" />
+          <EntitySet Name="vwAllMethodologies" EntityType="SoftwareAssetsModel.vwAllMethodology" />
+          <EntitySet Name="vwAllDataSources" EntityType="SoftwareAssetsModel.vwAllDataSource" />
+          <EntitySet Name="vwAllDeploymentServers" EntityType="SoftwareAssetsModel.vwAllDeploymentServer" />
+          <EntitySet Name="vwDeploymentServers" EntityType="SoftwareAssetsModel.vwDeploymentServer" />
+          <EntitySet Name="vwAllAddTools" EntityType="SoftwareAssetsModel.vwAllAddTool" />
+          <EntitySet Name="vwAllFrameworks" EntityType="SoftwareAssetsModel.vwAllFramework" />
+          <EntitySet Name="vwAllSkills" EntityType="SoftwareAssetsModel.vwAllSkill" />
+        </EntityContainer>
+        <EntityType Name="AdditionalTool">
+          <Key>
+            <PropertyRef Name="AdditionalToolID" />
+          </Key>
+          <Property Name="AdditionalToolID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+          <Property Name="AdditionalToolName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Application" Relationship="SoftwareAssetsModel.FK_AdditionalTool_Application" FromRole="AdditionalTool" ToRole="Application" />
+        </EntityType>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="ApplicationID" />
+          </Key>
+          <Property Name="ApplicationID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="OrganizationID" Type="Int32" />
+          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ApplicationEnvironment" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DevelopingCompany" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ProjectManager" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OperatingSystem" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IDE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="VersionControlTool" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="VersionControlPath" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="ApplicationType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UnitTestTool" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DeployementTool" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DeployedDate" Type="DateTime" Precision="3" />
+          <Property Name="OutsideApplication" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="Comment" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="AdditionalTools" Relationship="SoftwareAssetsModel.FK_AdditionalTool_Application" FromRole="Application" ToRole="AdditionalTool" />
+          <NavigationProperty Name="Organization" Relationship="SoftwareAssetsModel.FK_Application_Organization" FromRole="Application" ToRole="Organization" />
+          <NavigationProperty Name="DataSources" Relationship="SoftwareAssetsModel.FK_DataSource_Application" FromRole="Application" ToRole="DataSource" />
+          <NavigationProperty Name="DeploymentServers" Relationship="SoftwareAssetsModel.FK_DeploymentServer_Application" FromRole="Application" ToRole="DeploymentServer" />
+          <NavigationProperty Name="DevelopmentLanguages" Relationship="SoftwareAssetsModel.FK_DevelopmentLanguages_Application" FromRole="Application" ToRole="DevelopmentLanguages" />
+          <NavigationProperty Name="FrameworkUseds" Relationship="SoftwareAssetsModel.FK_FrameworkUsed_Application" FromRole="Application" ToRole="FrameworkUsed" />
+          <NavigationProperty Name="PatternUseds" Relationship="SoftwareAssetsModel.FK_PatternUsed_Application" FromRole="Application" ToRole="PatternUsed" />
+          <NavigationProperty Name="SkillsRequireds" Relationship="SoftwareAssetsModel.FK_SkillsRequired_Application" FromRole="Application" ToRole="SkillsRequired" />
+          <NavigationProperty Name="ApplicationMethodologies" Relationship="SoftwareAssetsModel.FK_ApplicationMethodology_Application" FromRole="Application" ToRole="ApplicationMethodology" />
+        </EntityType>
+        <EntityType Name="ApplicationEnvironment">
+          <Key>
+            <PropertyRef Name="ApplicationEnvironmentID" />
+          </Key>
+          <Property Name="ApplicationEnvironmentID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationEnvironmentName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="DataSources" Relationship="SoftwareAssetsModel.FK_DataSource_ApplicationEnvironment1" FromRole="ApplicationEnvironment" ToRole="DataSource" />
+          <NavigationProperty Name="DeploymentServers" Relationship="SoftwareAssetsModel.FK_DeploymentServer_ApplicationEnvironment" FromRole="ApplicationEnvironment" ToRole="DeploymentServer" />
+        </EntityType>
+        <EntityType Name="BusinessUnit">
+          <Key>
+            <PropertyRef Name="BusinessUnitID" />
+          </Key>
+          <Property Name="BusinessUnitID" Type="Int32" Nullable="false" />
+          <Property Name="OrganizationID" Type="Int32" Nullable="false" />
+          <Property Name="BusinessUnitName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Comment" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Organization" Relationship="SoftwareAssetsModel.FK_BusinessUnit_Organization" FromRole="BusinessUnit" ToRole="Organization" />
+        </EntityType>
+        <EntityType Name="DataSource">
+          <Key>
+            <PropertyRef Name="DataSourceID" />
+          </Key>
+          <Property Name="DataSourceID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+          <Property Name="ApplicationEnvironmentID" Type="Int32" Nullable="false" />
+          <Property Name="DataSourceName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SchemaName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Application" Relationship="SoftwareAssetsModel.FK_DataSource_Application" FromRole="DataSource" ToRole="Application" />
+          <NavigationProperty Name="ApplicationEnvironment" Relationship="SoftwareAssetsModel.FK_DataSource_ApplicationEnvironment1" FromRole="DataSource" ToRole="ApplicationEnvironment" />
+          <Property Type="String" Name="DataSourceType" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DeploymentServer">
+          <Key>
+            <PropertyRef Name="DeploymentServerID" />
+          </Key>
+          <Property Name="DeploymentServerID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+          <Property Name="ApplicationEnvironmentID" Type="Int32" Nullable="false" />
+          <Property Name="DeploymentServerName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Application" Relationship="SoftwareAssetsModel.FK_DeploymentServer_Application" FromRole="DeploymentServer" ToRole="Application" />
+          <NavigationProperty Name="ApplicationEnvironment" Relationship="SoftwareAssetsModel.FK_DeploymentServer_ApplicationEnvironment" FromRole="DeploymentServer" ToRole="ApplicationEnvironment" />
+        </EntityType>
+        <EntityType Name="DevelopmentLanguage">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="LanguageID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+          <Property Name="LanguageName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Application" Relationship="SoftwareAssetsModel.FK_DevelopmentLanguages_Application" FromRole="DevelopmentLanguages" ToRole="Application" />
+        </EntityType>
+        <EntityType Name="FrameworkUsed">
+          <Key>
+            <PropertyRef Name="FrameworkID" />
+          </Key>
+          <Property Name="FrameworkID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+          <Property Name="FrameworkName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Application" Relationship="SoftwareAssetsModel.FK_FrameworkUsed_Application" FromRole="FrameworkUsed" ToRole="Application" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="OrganizationID" />
+          </Key>
+          <Property Name="OrganizationID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="OrganizationName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Comment" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="OrgAddress_1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OrgAddress_2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OrgCity" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="OrgState" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="OrgZipCode" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="ContactPerson" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Fax" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="OrgUrl" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateUpdated" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUserID" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Applications" Relationship="SoftwareAssetsModel.FK_Application_Organization" FromRole="Organization" ToRole="Application" />
+          <NavigationProperty Name="BusinessUnits" Relationship="SoftwareAssetsModel.FK_BusinessUnit_Organization" FromRole="Organization" ToRole="BusinessUnit" />
+        </EntityType>
+        <EntityType Name="PatternUsed">
+          <Key>
+            <PropertyRef Name="PatternID" />
+          </Key>
+          <Property Name="PatternID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+          <Property Name="PatternName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Application" Relationship="SoftwareAssetsModel.FK_PatternUsed_Application" FromRole="PatternUsed" ToRole="Application" />
+        </EntityType>
+        <EntityType Name="SkillsRequired">
+          <Key>
+            <PropertyRef Name="SkillID" />
+          </Key>
+          <Property Name="SkillID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+          <Property Name="SkillName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Application" Relationship="SoftwareAssetsModel.FK_SkillsRequired_Application" FromRole="SkillsRequired" ToRole="Application" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateCode" />
+          </Key>
+          <Property Name="StateCode" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="StateName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="56" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_AdditionalTool_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Application" Multiplicity="1" />
+          <End Role="AdditionalTool" Type="SoftwareAssetsModel.AdditionalTool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="AdditionalTool">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Application_Organization">
+          <End Role="Organization" Type="SoftwareAssetsModel.Organization" Multiplicity="0..1" />
+          <End Role="Application" Type="SoftwareAssetsModel.Application" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="OrganizationID" />
+            </Principal>
+            <Dependent Role="Application">
+              <PropertyRef Name="OrganizationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DataSource_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Application" Multiplicity="1" />
+          <End Role="DataSource" Type="SoftwareAssetsModel.DataSource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="DataSource">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeploymentServer_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Application" Multiplicity="1" />
+          <End Role="DeploymentServer" Type="SoftwareAssetsModel.DeploymentServer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="DeploymentServer">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DevelopmentLanguages_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Application" Multiplicity="1" />
+          <End Role="DevelopmentLanguages" Type="SoftwareAssetsModel.DevelopmentLanguage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="DevelopmentLanguages">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FrameworkUsed_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Application" Multiplicity="1" />
+          <End Role="FrameworkUsed" Type="SoftwareAssetsModel.FrameworkUsed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="FrameworkUsed">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatternUsed_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Application" Multiplicity="1" />
+          <End Role="PatternUsed" Type="SoftwareAssetsModel.PatternUsed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="PatternUsed">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SkillsRequired_Application">
+          <End Role="Application" Type="SoftwareAssetsModel.Application" Multiplicity="1" />
+          <End Role="SkillsRequired" Type="SoftwareAssetsModel.SkillsRequired" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="SkillsRequired">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DataSource_ApplicationEnvironment1">
+          <End Role="ApplicationEnvironment" Type="SoftwareAssetsModel.ApplicationEnvironment" Multiplicity="1" />
+          <End Role="DataSource" Type="SoftwareAssetsModel.DataSource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApplicationEnvironment">
+              <PropertyRef Name="ApplicationEnvironmentID" />
+            </Principal>
+            <Dependent Role="DataSource">
+              <PropertyRef Name="ApplicationEnvironmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeploymentServer_ApplicationEnvironment">
+          <End Role="ApplicationEnvironment" Type="SoftwareAssetsModel.ApplicationEnvironment" Multiplicity="1" />
+          <End Role="DeploymentServer" Type="SoftwareAssetsModel.DeploymentServer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApplicationEnvironment">
+              <PropertyRef Name="ApplicationEnvironmentID" />
+            </Principal>
+            <Dependent Role="DeploymentServer">
+              <PropertyRef Name="ApplicationEnvironmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessUnit_Organization">
+          <End Role="Organization" Type="SoftwareAssetsModel.Organization" Multiplicity="1" />
+          <End Role="BusinessUnit" Type="SoftwareAssetsModel.BusinessUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="OrganizationID" />
+            </Principal>
+            <Dependent Role="BusinessUnit">
+              <PropertyRef Name="OrganizationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ApplicationMethodology">
+          <Key>
+            <PropertyRef Name="ApplicationMethodologyID" />
+          </Key>
+          <Property Type="Int32" Name="ApplicationMethodologyID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ApplicationID" Nullable="false" />
+          <Property Type="String" Name="ApplicationMethodologyText" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Application" Relationship="SoftwareAssetsModel.FK_ApplicationMethodology_Application" FromRole="ApplicationMethodology" ToRole="Application" />
+        </EntityType>
+        <Association Name="FK_ApplicationMethodology_Application">
+          <End Type="SoftwareAssetsModel.Application" Role="Application" Multiplicity="1" />
+          <End Type="SoftwareAssetsModel.ApplicationMethodology" Role="ApplicationMethodology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="ApplicationMethodology">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vwDataSource">
+          <Key>
+            <PropertyRef Name="DataSourceID" />
+            <PropertyRef Name="ApplicationID" />
+            <PropertyRef Name="ApplicationEnvironmentID" />
+            <PropertyRef Name="DataSourceName" />
+            <PropertyRef Name="ApplicationEnvironmentName" />
+          </Key>
+          <Property Type="Int32" Name="DataSourceID" Nullable="false" />
+          <Property Type="Int32" Name="ApplicationID" Nullable="false" />
+          <Property Type="Int32" Name="ApplicationEnvironmentID" Nullable="false" />
+          <Property Type="String" Name="DataSourceName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SchemaName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DataSourceType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApplicationEnvironmentName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vwAllLanguage">
+          <Key>
+            <PropertyRef Name="LanguageName" />
+          </Key>
+          <Property Type="String" Name="LanguageName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="LangCount" />
+        </EntityType>
+        <EntityType Name="vwAllMethodology">
+          <Key>
+            <PropertyRef Name="ApplicationMethodologyText" />
+          </Key>
+          <Property Type="String" Name="ApplicationMethodologyText" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="MthdCount" />
+        </EntityType>
+        <EntityType Name="vwAllDataSource">
+          <Key>
+            <PropertyRef Name="DataSourceName" />
+          </Key>
+          <Property Type="String" Name="DataSourceName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="DSCount" />
+        </EntityType>
+        <EntityType Name="vwAllDeploymentServer">
+          <Key>
+            <PropertyRef Name="DeploymentServerName" />
+          </Key>
+          <Property Type="String" Name="DeploymentServerName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="DSCount" />
+        </EntityType>
+        <EntityType Name="vwDeploymentServer">
+          <Key>
+            <PropertyRef Name="DeploymentServerID" />
+            <PropertyRef Name="ApplicationID" />
+            <PropertyRef Name="ApplicationEnvironmentID" />
+            <PropertyRef Name="DeploymentServerName" />
+            <PropertyRef Name="ApplicationEnvironmentName" />
+          </Key>
+          <Property Type="Int32" Name="DeploymentServerID" Nullable="false" />
+          <Property Type="Int32" Name="ApplicationID" Nullable="false" />
+          <Property Type="Int32" Name="ApplicationEnvironmentID" Nullable="false" />
+          <Property Type="String" Name="DeploymentServerName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApplicationEnvironmentName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vwAllAddTool">
+          <Key>
+            <PropertyRef Name="AdditionalToolName" />
+          </Key>
+          <Property Type="String" Name="AdditionalToolName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ToolCount" />
+        </EntityType>
+        <EntityType Name="vwAllFramework">
+          <Key>
+            <PropertyRef Name="FrameworkName" />
+          </Key>
+          <Property Type="String" Name="FrameworkName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="FrmwCount" />
+        </EntityType>
+        <EntityType Name="vwAllSkill">
+          <Key>
+            <PropertyRef Name="SkillName" />
+          </Key>
+          <Property Type="String" Name="SkillName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="SkillCount" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SoftwareAssetsModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="AdditionalTools">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.AdditionalTool">
+              <MappingFragment StoreEntitySet="AdditionalTool">
+                <ScalarProperty Name="AdditionalToolID" ColumnName="AdditionalToolID" />
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="AdditionalToolName" ColumnName="AdditionalToolName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Applications">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.Application">
+              <MappingFragment StoreEntitySet="Application">
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+                <ScalarProperty Name="ApplicationEnvironment" ColumnName="ApplicationEnvironment" />
+                <ScalarProperty Name="DevelopingCompany" ColumnName="DevelopingCompany" />
+                <ScalarProperty Name="ProjectManager" ColumnName="ProjectManager" />
+                <ScalarProperty Name="OperatingSystem" ColumnName="OperatingSystem" />
+                <ScalarProperty Name="IDE" ColumnName="IDE" />
+                <ScalarProperty Name="VersionControlTool" ColumnName="VersionControlTool" />
+                <ScalarProperty Name="VersionControlPath" ColumnName="VersionControlPath" />
+                <ScalarProperty Name="ApplicationType" ColumnName="ApplicationType" />
+                <ScalarProperty Name="UnitTestTool" ColumnName="UnitTestTool" />
+                <ScalarProperty Name="DeployementTool" ColumnName="DeployementTool" />
+                <ScalarProperty Name="DeployedDate" ColumnName="DeployedDate" />
+                <ScalarProperty Name="OutsideApplication" ColumnName="OutsideApplication" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApplicationEnvironments">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.ApplicationEnvironment">
+              <MappingFragment StoreEntitySet="ApplicationEnvironment">
+                <ScalarProperty Name="ApplicationEnvironmentID" ColumnName="ApplicationEnvironmentID" />
+                <ScalarProperty Name="ApplicationEnvironmentName" ColumnName="ApplicationEnvironmentName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusinessUnits">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.BusinessUnit">
+              <MappingFragment StoreEntitySet="BusinessUnit">
+                <ScalarProperty Name="BusinessUnitID" ColumnName="BusinessUnitID" />
+                <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+                <ScalarProperty Name="BusinessUnitName" ColumnName="BusinessUnitName" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DataSources">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.DataSource">
+              <MappingFragment StoreEntitySet="DataSource">
+                <ScalarProperty Name="DataSourceType" ColumnName="DataSourceType" />
+                <ScalarProperty Name="DataSourceID" ColumnName="DataSourceID" />
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="ApplicationEnvironmentID" ColumnName="ApplicationEnvironmentID" />
+                <ScalarProperty Name="DataSourceName" ColumnName="DataSourceName" />
+                <ScalarProperty Name="SchemaName" ColumnName="SchemaName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeploymentServers">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.DeploymentServer">
+              <MappingFragment StoreEntitySet="DeploymentServer">
+                <ScalarProperty Name="DeploymentServerID" ColumnName="DeploymentServerID" />
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="ApplicationEnvironmentID" ColumnName="ApplicationEnvironmentID" />
+                <ScalarProperty Name="DeploymentServerName" ColumnName="DeploymentServerName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DevelopmentLanguages">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.DevelopmentLanguage">
+              <MappingFragment StoreEntitySet="DevelopmentLanguages">
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FrameworkUseds">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.FrameworkUsed">
+              <MappingFragment StoreEntitySet="FrameworkUsed">
+                <ScalarProperty Name="FrameworkID" ColumnName="FrameworkID" />
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="FrameworkName" ColumnName="FrameworkName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organizations">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.Organization">
+              <MappingFragment StoreEntitySet="Organization">
+                <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+                <ScalarProperty Name="OrganizationName" ColumnName="OrganizationName" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="OrgAddress_1" ColumnName="OrgAddress_1" />
+                <ScalarProperty Name="OrgAddress_2" ColumnName="OrgAddress_2" />
+                <ScalarProperty Name="OrgCity" ColumnName="OrgCity" />
+                <ScalarProperty Name="OrgState" ColumnName="OrgState" />
+                <ScalarProperty Name="OrgZipCode" ColumnName="OrgZipCode" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="OrgUrl" ColumnName="OrgUrl" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatternUseds">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.PatternUsed">
+              <MappingFragment StoreEntitySet="PatternUsed">
+                <ScalarProperty Name="PatternID" ColumnName="PatternID" />
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="PatternName" ColumnName="PatternName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SkillsRequireds">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.SkillsRequired">
+              <MappingFragment StoreEntitySet="SkillsRequired">
+                <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="SkillName" ColumnName="SkillName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.State">
+              <MappingFragment StoreEntitySet="State">
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApplicationMethodologies">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.ApplicationMethodology">
+              <MappingFragment StoreEntitySet="ApplicationMethodology">
+                <ScalarProperty Name="ApplicationMethodologyText" ColumnName="ApplicationMethodologyText" />
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="ApplicationMethodologyID" ColumnName="ApplicationMethodologyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwDataSources">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.vwDataSource">
+              <MappingFragment StoreEntitySet="vwDataSource">
+                <ScalarProperty Name="ApplicationEnvironmentName" ColumnName="ApplicationEnvironmentName" />
+                <ScalarProperty Name="DataSourceType" ColumnName="DataSourceType" />
+                <ScalarProperty Name="SchemaName" ColumnName="SchemaName" />
+                <ScalarProperty Name="DataSourceName" ColumnName="DataSourceName" />
+                <ScalarProperty Name="ApplicationEnvironmentID" ColumnName="ApplicationEnvironmentID" />
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="DataSourceID" ColumnName="DataSourceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwAllLanguages">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.vwAllLanguage">
+              <MappingFragment StoreEntitySet="vwAllLanguages">
+                <ScalarProperty Name="LangCount" ColumnName="LangCount" />
+                <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwAllMethodologies">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.vwAllMethodology">
+              <MappingFragment StoreEntitySet="vwAllMethodologies">
+                <ScalarProperty Name="MthdCount" ColumnName="MthdCount" />
+                <ScalarProperty Name="ApplicationMethodologyText" ColumnName="ApplicationMethodologyText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwAllDataSources">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.vwAllDataSource">
+              <MappingFragment StoreEntitySet="vwAllDataSources">
+                <ScalarProperty Name="DSCount" ColumnName="DSCount" />
+                <ScalarProperty Name="DataSourceName" ColumnName="DataSourceName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwAllDeploymentServers">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.vwAllDeploymentServer">
+              <MappingFragment StoreEntitySet="vwAllDeploymentServer">
+                <ScalarProperty Name="DSCount" ColumnName="DSCount" />
+                <ScalarProperty Name="DeploymentServerName" ColumnName="DeploymentServerName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwDeploymentServers">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.vwDeploymentServer">
+              <MappingFragment StoreEntitySet="vwDeploymentServer">
+                <ScalarProperty Name="ApplicationEnvironmentName" ColumnName="ApplicationEnvironmentName" />
+                <ScalarProperty Name="DeploymentServerName" ColumnName="DeploymentServerName" />
+                <ScalarProperty Name="ApplicationEnvironmentID" ColumnName="ApplicationEnvironmentID" />
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="DeploymentServerID" ColumnName="DeploymentServerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwAllAddTools">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.vwAllAddTool">
+              <MappingFragment StoreEntitySet="vwAllAddTools">
+                <ScalarProperty Name="ToolCount" ColumnName="ToolCount" />
+                <ScalarProperty Name="AdditionalToolName" ColumnName="AdditionalToolName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwAllFrameworks">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.vwAllFramework">
+              <MappingFragment StoreEntitySet="vwAllFramework">
+                <ScalarProperty Name="FrmwCount" ColumnName="FrmwCount" />
+                <ScalarProperty Name="FrameworkName" ColumnName="FrameworkName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwAllSkills">
+            <EntityTypeMapping TypeName="SoftwareAssetsModel.vwAllSkill">
+              <MappingFragment StoreEntitySet="vwAllSkills">
+                <ScalarProperty Name="SkillCount" ColumnName="SkillCount" />
+                <ScalarProperty Name="SkillName" ColumnName="SkillName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
